@@ -1,4 +1,5 @@
 import Producto from "../models/producto";
+import { validationResult } from "express-validator";
 
 export const listarProductos = async (req, res) => {
   try {
@@ -14,6 +15,12 @@ export const listarProductos = async (req, res) => {
 
 export const crearProducto = async (req, res) => {
   try {
+    const errores = validationResult(req);
+    if(!errores.isEmpty()){
+      return res.status(400).json({
+        errores: errores.array()
+      })
+    }
     const productoNuevo = new Producto(req.body);
     await productoNuevo.save();
     res.status(201).json({
@@ -41,6 +48,12 @@ export const obtenerProducto = async (req, res) => {
 
 export const editarProducto = async (req, res) => {
   try {
+    const errores = validationResult(req);
+    if (!errores.isEmpty()) {
+      return res.status(400).json({
+        errores: errores.array(),
+      });
+    }
     await Producto.findByIdAndUpdate(req.params.id, req.body);
     res.status(200).json({
       mensaje: "El producto fue editado correctamente",
