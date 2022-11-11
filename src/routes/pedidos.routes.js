@@ -1,8 +1,20 @@
 import { Router } from "express";
-import { listarPedidos } from "../controllers/pedidos.controllers";
+import {
+  borrarPedido,
+  crearPedido,
+  editarPedido,
+  listarPedidos,
+  obtenerPedido,
+} from "../controllers/pedidos.controllers";
 
 const router = Router();
 
-router.route("/pedidos").get(listarPedidos);
+router.route("/pedidos").get(listarPedidos).post(crearPedido);
 
-export default router
+router
+  .route("/pedidos/:id")
+  .get(obtenerPedido)
+  .put(editarPedido)
+  .delete(borrarPedido);
+
+export default router;
