@@ -4,6 +4,7 @@ import cors from 'cors'
 import path from 'path'
 import './database'
 import pedidosRouter from './routes/pedidos.routes'
+import productosRouter from './routes/productos.routes'
 
 const app = express()
 
@@ -22,4 +23,5 @@ app.use(express.static(path.join(__dirname, '../public')))
 
 // RUTAS
 // http://localhost:4000/
-app.use('apirestaurant/list', pedidosRouter)
+app.use('/apirestaurant/ped', pedidosRouter)
+app.use('/apirestaurant/prod', productosRouter)
