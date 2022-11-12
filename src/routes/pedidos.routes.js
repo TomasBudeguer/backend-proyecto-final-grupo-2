@@ -5,6 +5,7 @@ import {
   editarPedido,
   listarPedidos,
   obtenerPedido,
+  listarPedidosPendientes
 } from "../controllers/pedidos.controllers";
 import { check } from "express-validator";
 
@@ -30,7 +31,12 @@ router
       check("estado")
         .notEmpty()
         .withMessage("El estado es un dato obligatorio")
-        .isIn(["Pendiente", "En elaboracion", "Listo para retirar", "Cancelado"])
+        .isIn([
+          "Pendiente",
+          "En elaboracion",
+          "Listo para retirar",
+          "Cancelado",
+        ])
         .withMessage("La categoria debe ser correcta"),
     ],
     crearPedido
@@ -56,11 +62,18 @@ router
       check("estado")
         .notEmpty()
         .withMessage("El estado es un dato obligatorio")
-        .isIn(["Pendiente", "En elaboracion", "Listo para retirar", "Cancelado"])
+        .isIn([
+          "Pendiente",
+          "En elaboracion",
+          "Listo para retirar",
+          "Cancelado",
+        ])
         .withMessage("La categoria debe ser correcta"),
     ],
     editarPedido
   )
   .delete(borrarPedido);
+
+router.route("/pedidos-pendientes").get(listarPedidosPendientes);
 
 export default router;

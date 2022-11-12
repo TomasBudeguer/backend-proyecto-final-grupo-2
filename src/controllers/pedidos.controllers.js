@@ -80,3 +80,16 @@ export const borrarPedido = async (req, res) => {
     });
   }
 };
+
+// pedidos pendientes
+export const listarPedidosPendientes = async (req, res) => {
+  try {
+    const pedidosPendientes = await Pedido.find({estado: "Pendiente"});
+    res.status(200).json(pedidosPendientes);
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({
+      mensaje: "Error al intentar buscar los producto",
+    });
+  }
+};
