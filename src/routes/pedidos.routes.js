@@ -30,7 +30,7 @@ router
       check("estado")
         .notEmpty()
         .withMessage("El estado es un dato obligatorio")
-        .isIn(["Pendiente", "En elaboracion", "Listo para retirar"])
+        .isIn(["Pendiente", "En elaboracion", "Listo para retirar", "Cancelado"])
         .withMessage("La categoria debe ser correcta"),
     ],
     crearPedido
@@ -56,7 +56,7 @@ router
       check("estado")
         .notEmpty()
         .withMessage("El estado es un dato obligatorio")
-        .isIn(["Pendiente", "En elaboracion", "Listo para retirar"])
+        .isIn(["Pendiente", "En elaboracion", "Listo para retirar", "Cancelado"])
         .withMessage("La categoria debe ser correcta"),
     ],
     editarPedido
