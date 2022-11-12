@@ -5,7 +5,9 @@ import {
   editarPedido,
   listarPedidos,
   obtenerPedido,
-  listarPedidosPendientes
+  listarPedidosPendientes,
+  listarPedidosElaboracion,
+  listarPedidosListos
 } from "../controllers/pedidos.controllers";
 import { check } from "express-validator";
 
@@ -75,5 +77,7 @@ router
   .delete(borrarPedido);
 
 router.route("/pedidos-pendientes").get(listarPedidosPendientes);
+router.route("/pedidos-elaboracion").get(listarPedidosElaboracion);
+router.route("/pedidos-listos").get(listarPedidosListos);
 
 export default router;

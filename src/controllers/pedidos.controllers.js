@@ -93,3 +93,29 @@ export const listarPedidosPendientes = async (req, res) => {
     });
   }
 };
+
+// pedidos pendientes
+export const listarPedidosElaboracion = async (req, res) => {
+  try {
+    const pedidosPendientes = await Pedido.find({estado: "En elaboracion"});
+    res.status(200).json(pedidosPendientes);
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({
+      mensaje: "Error al intentar buscar los producto",
+    });
+  }
+}
+
+// pedidos listos
+export const listarPedidosListos = async (req, res) => {
+  try {
+    const pedidosListos = await Pedido.find({estado: "Listo para retirar"});
+    res.status(200).json(pedidosListos);
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({
+      mensaje: "Error al intentar buscar los producto",
+    });
+  }
+}
