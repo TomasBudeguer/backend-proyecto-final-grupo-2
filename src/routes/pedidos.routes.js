@@ -7,7 +7,8 @@ import {
   obtenerPedido,
   listarPedidosPendientes,
   listarPedidosElaboracion,
-  listarPedidosListos
+  listarPedidosListos,
+  listarPedidosCancelados
 } from "../controllers/pedidos.controllers";
 import { check } from "express-validator";
 
@@ -79,5 +80,6 @@ router
 router.route("/pedidos-pendientes").get(listarPedidosPendientes);
 router.route("/pedidos-elaboracion").get(listarPedidosElaboracion);
 router.route("/pedidos-listos").get(listarPedidosListos);
+router.route("/pedidos-cancelados").get(listarPedidosCancelados);
 
 export default router;

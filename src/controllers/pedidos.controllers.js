@@ -119,3 +119,16 @@ export const listarPedidosListos = async (req, res) => {
     });
   }
 }
+
+// pedidos cancelados
+export const listarPedidosCancelados = async (req, res) => {
+  try {
+    const pedidosCancelados = await Pedido.find({estado: "Cancelado"});
+    res.status(200).json(pedidosCancelados);
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({
+      mensaje: "Error al intentar buscar los producto",
+    });
+  }
+}
