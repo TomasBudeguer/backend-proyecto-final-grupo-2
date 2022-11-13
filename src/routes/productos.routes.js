@@ -11,6 +11,7 @@ import {
   listarProductosEnsaladas,
   listarProductosPostres,
   listarProductosSalados,
+  listarProductosTortas,
   obtenerProducto,
 } from "../controllers/productos.controllers";
 import { check } from "express-validator";
@@ -133,5 +134,6 @@ router
   router.route("/productos-dulce").get(listarProductosDulce);
   router.route("/productos-ensaladas").get(listarProductosEnsaladas);
   router.route("/productos-postres").get(listarProductosPostres);
+  router.route("/productos-tortas").get(listarProductosTortas);
 
 export default router;

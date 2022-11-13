@@ -197,5 +197,17 @@ export const listarProductosPostres = async (req, res) => {
   }
 };
 
+export const listarProductosTortas = async (req, res) => {
+  try {
+    const productosTortas = await Producto.find({categoria: "Tortas"});
+    res.status(200).json(productosTortas);
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({
+      mensaje: "Error al intentar buscar las Tortas",
+    });
+  }
+};
+
 
 
