@@ -209,5 +209,17 @@ export const listarProductosTortas = async (req, res) => {
   }
 };
 
+export const listarProductosTartas = async (req, res) => {
+  try {
+    const productosTartas = await Producto.find({categoria: "Tartas"});
+    res.status(200).json(productosTartas);
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({
+      mensaje: "Error al intentar buscar las tartas",
+    });
+  }
+};
+
 
 

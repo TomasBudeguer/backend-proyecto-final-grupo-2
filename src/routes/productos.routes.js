@@ -11,6 +11,7 @@ import {
   listarProductosEnsaladas,
   listarProductosPostres,
   listarProductosSalados,
+  listarProductosTartas,
   listarProductosTortas,
   obtenerProducto,
 } from "../controllers/productos.controllers";
@@ -135,5 +136,6 @@ router
   router.route("/productos-ensaladas").get(listarProductosEnsaladas);
   router.route("/productos-postres").get(listarProductosPostres);
   router.route("/productos-tortas").get(listarProductosTortas);
+  router.route("/productos-tartas").get(listarProductosTartas);
 
 export default router;
