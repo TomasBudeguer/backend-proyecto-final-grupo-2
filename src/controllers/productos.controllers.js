@@ -110,3 +110,31 @@ export const filtroBusqueda = async (req, res) => {
     });
   }
 };
+//
+
+
+// Bebida caliente",
+//           "Bebida fria",
+//           "Dulce",
+//           "Ensaldas",
+//           "Postres",
+//           "Salado",
+//           "Tortas",
+//           "Tartas",
+
+//Peticion categoria
+
+export const listarProductosSalados = async (req, res) => {
+  try {
+    const productosSalados = await Producto.find({categoria: "Salado"});
+    res.status(200).json(productosSalados);
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({
+      mensaje: "Error al intentar buscar los productos salados",
+    });
+  }
+};
+
+
+

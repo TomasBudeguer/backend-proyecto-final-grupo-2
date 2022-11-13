@@ -5,6 +5,7 @@ import {
   editarProducto,
   filtroBusqueda,
   listarProductos,
+  listarProductosSalados,
   obtenerProducto,
 } from "../controllers/productos.controllers";
 import { check } from "express-validator";
@@ -121,5 +122,6 @@ router
   .delete(borrarProducto);
 
   router.route("/productos/filtro").post(filtroBusqueda);
+  router.route("/productos-salados").get(listarProductosSalados);
 
 export default router;
