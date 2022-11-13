@@ -185,6 +185,17 @@ export const listarProductosEnsaladas = async (req, res) => {
   }
 };
 
+export const listarProductosPostres = async (req, res) => {
+  try {
+    const productosPostres = await Producto.find({categoria: "Postres"});
+    res.status(200).json(productosPostres);
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({
+      mensaje: "Error al intentar buscar los Postres",
+    });
+  }
+};
 
 
 
