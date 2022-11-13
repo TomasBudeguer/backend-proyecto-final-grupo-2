@@ -149,6 +149,19 @@ export const listarProductosBebidaCaliente = async (req, res) => {
 };
 
 
+export const listarProductosBebidaFria = async (req, res) => {
+  try {
+    const productosBebidaFria = await Producto.find({categoria: "Bebida fria"});
+    res.status(200).json(productosBebidaFria);
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({
+      mensaje: "Error al intentar buscar las bebidas frias",
+    });
+  }
+};
+
+
 
 
 
