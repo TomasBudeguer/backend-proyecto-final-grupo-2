@@ -161,6 +161,19 @@ export const listarProductosBebidaFria = async (req, res) => {
   }
 };
 
+export const listarProductosDulce = async (req, res) => {
+  try {
+    const productosDulce = await Producto.find({categoria: "Dulce"});
+    res.status(200).json(productosDulce);
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({
+      mensaje: "Error al intentar buscar los productos dulces",
+    });
+  }
+};
+
+
 
 
 

@@ -7,6 +7,7 @@ import {
   listarProductos,
   listarProductosBebidaCaliente,
   listarProductosBebidaFria,
+  listarProductosDulce,
   listarProductosSalados,
   obtenerProducto,
 } from "../controllers/productos.controllers";
@@ -127,5 +128,6 @@ router
   router.route("/productos-salados").get(listarProductosSalados);
   router.route("/productos-bebida-caliente").get(listarProductosBebidaCaliente);
   router.route("/productos-bebida-fria").get(listarProductosBebidaFria);
+  router.route("/productos-dulce").get(listarProductosDulce);
 
 export default router;
