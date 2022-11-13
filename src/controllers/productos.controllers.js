@@ -116,7 +116,7 @@ export const filtroBusqueda = async (req, res) => {
 // Bebida caliente",
 //           "Bebida fria",
 //           "Dulce",
-//           "Ensaldas",
+//           "Ensaladas",
 //           "Postres",
 //           "Salado",
 //           "Tortas",
@@ -173,8 +173,17 @@ export const listarProductosDulce = async (req, res) => {
   }
 };
 
-
-
+export const listarProductosEnsaladas = async (req, res) => {
+  try {
+    const productosEnsaladas = await Producto.find({categoria: "Ensaladas"});
+    res.status(200).json(productosEnsaladas);
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({
+      mensaje: "Error al intentar buscar las ensaladas",
+    });
+  }
+};
 
 
 

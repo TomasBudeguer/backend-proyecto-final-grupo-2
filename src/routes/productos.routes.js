@@ -8,6 +8,7 @@ import {
   listarProductosBebidaCaliente,
   listarProductosBebidaFria,
   listarProductosDulce,
+  listarProductosEnsaladas,
   listarProductosSalados,
   obtenerProducto,
 } from "../controllers/productos.controllers";
@@ -51,7 +52,7 @@ router
           "Bebida caliente",
           "Bebida fria",
           "Dulce",
-          "Ensaldas",
+          "Ensaladas",
           "Postres",
           "Salado",
           "Tortas",
@@ -105,7 +106,7 @@ router
           "Bebida caliente",
           "Bebida fria",
           "Dulce",
-          "Ensaldas",
+          "Ensaladas",
           "Postres",
           "Salado",
           "Tortas",
@@ -129,5 +130,6 @@ router
   router.route("/productos-bebida-caliente").get(listarProductosBebidaCaliente);
   router.route("/productos-bebida-fria").get(listarProductosBebidaFria);
   router.route("/productos-dulce").get(listarProductosDulce);
+  router.route("/productos-ensaladas").get(listarProductosEnsaladas);
 
 export default router;
