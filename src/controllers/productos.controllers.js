@@ -110,19 +110,7 @@ export const filtroBusqueda = async (req, res) => {
     });
   }
 };
-//
 
-
-// Bebida caliente",
-//           "Bebida fria",
-//           "Dulce",
-//           "Ensaladas",
-//           "Postres",
-//           "Salado",
-//           "Tortas",
-//           "Tartas",
-
-//Peticion categoria
 
 export const listarProductosSalados = async (req, res) => {
   try {
