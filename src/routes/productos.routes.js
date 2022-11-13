@@ -3,6 +3,7 @@ import {
   borrarProducto,
   crearProducto,
   editarProducto,
+  filtroBusqueda,
   listarProductos,
   obtenerProducto,
 } from "../controllers/productos.controllers";
@@ -118,5 +119,7 @@ router
     editarProducto
   )
   .delete(borrarProducto);
+
+  router.route("/productos/filtro").post(filtroBusqueda);
 
 export default router;
