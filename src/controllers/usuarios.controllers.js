@@ -34,7 +34,7 @@ export const login = async (req, res) => {
     res.status(200).json({
       mensaje: "El usuario existe",
       uid: usuario._id,
-      nombre: usuario.nombre
+      nombreUsuario: usuario.nombreUsuario
     });
   } catch (error) {
     console.log(error);
@@ -76,7 +76,7 @@ export const crearUsuario = async (req, res) => {
 
     res.status(201).json({
       mensaje: "usuario creado",
-      nombre: usuario.nombre,
+      nombreUsuario: usuario.nombreUsuario,
       uid: usuario._id,
     });
   } catch (error) {

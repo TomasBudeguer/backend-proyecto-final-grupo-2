@@ -1,21 +1,23 @@
 import mongoose, {Schema} from "mongoose";
 
 const usuarioSchema = new Schema({
-    nombre:{
+    nombreUsuario:{
         type: String,
-        maxlength: 50,
+        minLength: 8,
+        maxLength: 50,
         required: true
     },
     email:{
         type: String,
-        maxlength: 200,
+        maxLength: 200,
         unique:true,
         required:true
     },
     password:{
         type: String,
         required:true,
-        maxlength: 16
+        minLength: 8,
+        maxLength: 16
     }
 });
 
