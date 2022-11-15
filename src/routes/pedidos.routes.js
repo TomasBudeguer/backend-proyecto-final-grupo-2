@@ -22,9 +22,9 @@ router
       check("nombreUsuario")
         .notEmpty()
         .withMessage("El nombre del usuario es un dato obligatorio")
-        .isLength({ min: 6, max: 20 })
+        .isLength({ min: 8, max: 50 })
         .withMessage(
-          "El nombre del usuario debe contener entre 6 y 20 caracteres"
+          "El nombre del usuario debe contener entre 8 y 50 caracteres"
         ),
       check("pedido")
         .notEmpty()
@@ -53,9 +53,9 @@ router
       check("nombreUsuario")
         .notEmpty()
         .withMessage("El nombre del usuario es un dato obligatorio")
-        .isLength({ min: 6, max: 20 })
+        .isLength({ min: 8, max: 50 })
         .withMessage(
-          "El nombre del usuario debe contener entre 6 y 20 caracteres"
+          "El nombre del usuario debe contener entre 8 y 50 caracteres"
         ),
       check("pedido")
         .notEmpty()

@@ -5,6 +5,7 @@ import path from 'path'
 import './database'
 import pedidosRouter from './routes/pedidos.routes'
 import productosRouter from './routes/productos.routes'
+import usuariosRouter from './routes/usuarios.routes'
 
 const app = express()
 
@@ -25,3 +26,4 @@ app.use(express.static(path.join(__dirname, '../public')))
 // http://localhost:4000/
 app.use('/apirestaurant/ped', pedidosRouter)
 app.use('/apirestaurant/prod', productosRouter)
+app.use('/apirestaurant/user', usuariosRouter)
