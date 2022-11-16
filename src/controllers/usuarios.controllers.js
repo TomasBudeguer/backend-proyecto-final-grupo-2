@@ -144,3 +144,4 @@ export const obtenerUsuario = async (req, res) => {
     });
   }
 };
+
