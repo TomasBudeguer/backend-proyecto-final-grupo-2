@@ -6,6 +6,7 @@ import './database'
 import pedidosRouter from './routes/pedidos.routes'
 import productosRouter from './routes/productos.routes'
 import usuariosRouter from './routes/usuarios.routes'
+import loginRouter from './routes/usuarios.routes'
 
 const app = express()
 
@@ -27,3 +28,4 @@ app.use(express.static(path.join(__dirname, '../public')))
 app.use('/apirestaurant/ped', pedidosRouter)
 app.use('/apirestaurant/prod', productosRouter)
 app.use('/apirestaurant/user', usuariosRouter)
+app.use('/apirestaurant/login', loginRouter )
