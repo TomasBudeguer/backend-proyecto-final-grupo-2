@@ -19,7 +19,7 @@ router.route("/usuario").post(
     check("password")
       .notEmpty()
       .withMessage("el password es obligatorio")
-      .isLength({ min: 8, max: 16 })
+      .isLength({ min: 8, max: 60 })
       .withMessage("la contraseña debe tener entre 8 y 16 caracteres"),
   ],
   login
@@ -49,7 +49,7 @@ router.route("/nuevo").get(listarUsuarios).post(
       .withMessage("ingrese una contraseña")
       .isLength({
         min: 8,
-        max: 16,
+        max: 60,
       })
       .withMessage(
         "ingrese un mínimo de 8 caracteres y un máximo de 16 caracteres"
