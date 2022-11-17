@@ -99,39 +99,39 @@ export const listarUsuarios = async (req, res) => {
   }
 };
 
-export const borrarUsuario = async (req, res) => {
-  try {
-    await Usuario.findByIdAndDelete(req.params.id)
-    res.status(200).json({
-      mensaje: "El usuario fue correctamente eliminado"
-    })
-  } catch (error) {
-    console.log(error);
-    res.status(404).json({
-      mensaje: "Error el usuario solicitado no pudo ser eliminado",
-    });
-  }
-};
+// export const borrarUsuario = async (req, res) => {
+//   try {
+//     await Usuario.findByIdAndDelete(req.params.id)
+//     res.status(200).json({
+//       mensaje: "El usuario fue correctamente eliminado"
+//     })
+//   } catch (error) {
+//     console.log(error);
+//     res.status(404).json({
+//       mensaje: "Error el usuario solicitado no pudo ser eliminado",
+//     });
+//   }
+// };
 
-export const editarUsuario = async (req, res) => {
-  try {
-    const errores = validationResult(req);
-    if (!errores.isEmpty()) {
-      return res.status(400).json({
-        errores: errores.array(),
-      });
-    }
-    await Usuario.findByIdAndUpdate(req.params.id, req.body);
-    res.status(200).json({
-      mensaje: "El Usuario fue editado correctamente",
-    });
-  } catch (error) {
-    console.log(error);
-    res.status(404).json({
-      mensaje: "Error el Usuario solicitado no pudo ser modificado",
-    });
-  }
-};
+// export const editarUsuario = async (req, res) => {
+//   try {
+//     const errores = validationResult(req);
+//     if (!errores.isEmpty()) {
+//       return res.status(400).json({
+//         errores: errores.array(),
+//       });
+//     }
+//     await Usuario.findByIdAndUpdate(req.params.id, req.body);
+//     res.status(200).json({
+//       mensaje: "El Usuario fue editado correctamente",
+//     });
+//   } catch (error) {
+//     console.log(error);
+//     res.status(404).json({
+//       mensaje: "Error el Usuario solicitado no pudo ser modificado",
+//     });
+//   }
+// };
 
 export const obtenerUsuario = async (req, res) => {
   try {
