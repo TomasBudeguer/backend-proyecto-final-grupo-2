@@ -58,7 +58,7 @@ router.route("/nuevo").get(listarUsuarios).post(
   crearUsuario
 );
 
-// router.route("/nuevo/:id").delete(borrarUsuario).put([
+ router.route("/nuevo/:id").delete(borrarUsuario).get(obtenerUsuario)//.put([
 //   check("nombreUsuario")
 //     .notEmpty()
 //     .withMessage("ingrese un nombre de usuario")
@@ -87,6 +87,6 @@ router.route("/nuevo").get(listarUsuarios).post(
 //     .withMessage(
 //       "ingrese un mínimo de 8 caracteres y un máximo de 16 caracteres"
 //     ),
-// ],editarUsuario).get(obtenerUsuario)
+// ],editarUsuario)
 
 export default router;
