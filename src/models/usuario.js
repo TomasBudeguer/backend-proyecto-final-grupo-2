@@ -17,7 +17,7 @@ const usuarioSchema = new Schema({
         type: String,
         required:true,
         minLength: 8,
-        maxLength: 60
+        maxLength: 16
     }
 });
 
