@@ -21,12 +21,12 @@ export const login = async (req, res) => {
     if (!usuario) {
       //si el usuario existe
       return res.status(400).json({
-        mensaje: "Correo o password invalido - correo",
+        mensaje: "Correo o password invalido",
       });
     }
      if (password !== usuario.password) {
         return res.status(400).json({
-          mensaje: "Correo o password invalido - password",
+          mensaje: "Correo o password invalido",
         });
       }
 
