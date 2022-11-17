@@ -132,3 +132,16 @@ export const listarPedidosCancelados = async (req, res) => {
     });
   }
 }
+
+// Pedidos personales
+export const listarPedidosPersonales = async (req, res) => {
+  try {
+    const pedidosPersonales = await Pedido.find({nombreUsuario: req.body.nombreUsuario});
+    res.status(200).json(pedidosPersonales);
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({
+      mensaje: "Error al intentar buscar los producto",
+    });
+  }
+};

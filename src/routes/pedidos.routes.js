@@ -8,7 +8,8 @@ import {
   listarPedidosPendientes,
   listarPedidosElaboracion,
   listarPedidosListos,
-  listarPedidosCancelados
+  listarPedidosCancelados,
+  listarPedidosPersonales
 } from "../controllers/pedidos.controllers";
 import { check } from "express-validator";
 
@@ -81,5 +82,6 @@ router.route("/pedidos-pendientes").get(listarPedidosPendientes);
 router.route("/pedidos-elaboracion").get(listarPedidosElaboracion);
 router.route("/pedidos-listos").get(listarPedidosListos);
 router.route("/pedidos-cancelados").get(listarPedidosCancelados);
+router.route("/pedidos-personales").post(listarPedidosPersonales);
 
 export default router;
