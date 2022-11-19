@@ -9,7 +9,7 @@ import {
   listarPedidosElaboracion,
   listarPedidosListos,
   listarPedidosCancelados,
-  listarPedidosPersonales
+  listarPedidosPersonales,
 } from "../controllers/pedidos.controllers";
 import { check } from "express-validator";
 
@@ -32,6 +32,11 @@ router
         .withMessage("El pedido es un dato obligatorio")
         .isLength({ min: 3 })
         .withMessage("El pedido debe contener por lo menos 3 caracteres"),
+        check("total")
+        .notEmpty()
+        .withMessage("El total es un dato obligatorio")
+        .isNumeric({ min: 1, max: 1000000 })
+        .withMessage("El total debe ser entre $1 y $1000000"),
       check("estado")
         .notEmpty()
         .withMessage("El estado es un dato obligatorio")
@@ -63,6 +68,11 @@ router
         .withMessage("El pedido es un dato obligatorio")
         .isLength({ min: 3 })
         .withMessage("El pedido debe contener por lo menos 3 caracteres"),
+      check("total")
+        .notEmpty()
+        .withMessage("El total es un dato obligatorio")
+        .isNumeric({ min: 1, max: 1000000 })
+        .withMessage("El total debe ser entre $1 y $1000000"),
       check("estado")
         .notEmpty()
         .withMessage("El estado es un dato obligatorio")
