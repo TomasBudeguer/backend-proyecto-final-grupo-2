@@ -8,9 +8,15 @@ const pedidoSchema = new Schema({
     maxLength: 50,
   },
   pedido: {
-    type: String,
+    type: Array,
     required: true,
     minLength: 3,
+  },
+  total: {
+    type: Number,
+    required: true,
+    min: 1,
+    maxLength: 1000000,
   },
   estado: {
     type: String,
