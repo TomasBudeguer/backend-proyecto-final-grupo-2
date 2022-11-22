@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { crearUsuario, listarUsuarios, login, obtenerUsuario } from "../controllers/usuarios.controllers";
+import { borrarUsuario, crearUsuario, editarUsuario, listarUsuarios, login, obtenerUsuario } from "../controllers/usuarios.controllers";
 
 const router = Router();
 
@@ -58,7 +58,7 @@ router.route("/nuevo").get(listarUsuarios).post(
   crearUsuario
 );
 
- router.route("/nuevo/:id").get(obtenerUsuario)//.delete(borrarUsuario)//.put([
+ router.route("/nuevo/:id").delete(borrarUsuario).get(obtenerUsuario)//.put([
 //   check("nombreUsuario")
 //     .notEmpty()
 //     .withMessage("ingrese un nombre de usuario")
