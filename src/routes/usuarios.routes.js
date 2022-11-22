@@ -58,7 +58,7 @@ router.route("/nuevo").get(listarUsuarios).post(
   crearUsuario
 );
 
- router.route("/nuevo/:id").get(obtenerUsuario)//.delete(borrarUsuario).put([
+ router.route("/nuevo/:id").get(obtenerUsuario).delete(borrarUsuario)//.put([
 //   check("nombreUsuario")
 //     .notEmpty()
 //     .withMessage("ingrese un nombre de usuario")
