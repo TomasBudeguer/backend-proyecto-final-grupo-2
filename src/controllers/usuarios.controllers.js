@@ -1,6 +1,6 @@
 import Usuario from "../models/usuario";
 import { validationResult } from "express-validator";
-// import bcrypt from "bcryptjs";
+import bcrypt from "bcryptjs";
 
 export const login = async (req, res) => {
   try {
@@ -24,17 +24,26 @@ export const login = async (req, res) => {
         mensaje: "Correo o password invalido - correo",
       });
     }
-     if (password !== usuario.password) {
-        return res.status(400).json({
-          mensaje: "Correo o password invalido - password",
-        });
-      }
+    //  if (password !== usuario.password) {
+    //     return res.status(400).json({
+    //       mensaje: "Correo o password invalido - password",
+    //     });
+    //   }
+
+    // //verificar si el password corresponde con el pass encriptado en mi BD
+    const passwordValido = bcrypt.compareSync(password, usuario.password);
+    // // si no es valido el password
+    if (!passwordValido) {
+      return res.status(400).json({
+        mensaje: "Correo o password invalido - password",
+      });
+    }
 
     //responder que el usuario es correcto
     res.status(200).json({
       mensaje: "El usuario existe",
       uid: usuario._id,
-      nombreUsuario: usuario.nombreUsuario
+      nombreUsuario: usuario.nombreUsuario,
     });
   } catch (error) {
     console.log(error);
@@ -58,7 +67,7 @@ export const crearUsuario = async (req, res) => {
     const { email, password } = req.body;
 
     //verificar si el email ya existe
-    let usuario = await Usuario.findOne({ email }); 
+    let usuario = await Usuario.findOne({ email });
     if (usuario) {
       //si el usuario existe
       return res.status(400).json({
@@ -69,8 +78,8 @@ export const crearUsuario = async (req, res) => {
     //guardamos el nuevo usuario en la BD
     usuario = new Usuario(req.body);
     // //guardar el usuario en la BD con la pass encriptada
-    // const salt = bcrypt.genSaltSync();
-    // usuario.password = bcrypt.hashSync(password, salt);
+    const salt = bcrypt.genSaltSync();
+    usuario.password = bcrypt.hashSync(password, salt);
 
     await usuario.save();
 
@@ -101,10 +110,10 @@ export const listarUsuarios = async (req, res) => {
 
 export const borrarUsuario = async (req, res) => {
   try {
-    await Usuario.findByIdAndDelete(req.params.id)
+    await Usuario.findByIdAndDelete(req.params.id);
     res.status(200).json({
-      mensaje: "El usuario fue correctamente eliminado"
-    })
+      mensaje: "El usuario fue correctamente eliminado",
+    });
   } catch (error) {
     console.log(error);
     res.status(404).json({
@@ -144,4 +153,3 @@ export const obtenerUsuario = async (req, res) => {
     });
   }
 };
-
