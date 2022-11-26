@@ -32,7 +32,7 @@ router
         .withMessage("El pedido es un dato obligatorio")
         .isLength({ min: 3 })
         .withMessage("El pedido debe contener por lo menos 3 caracteres"),
-        check("total")
+      check("total")
         .notEmpty()
         .withMessage("El total es un dato obligatorio")
         .isNumeric({ min: 1, max: 1000000 })

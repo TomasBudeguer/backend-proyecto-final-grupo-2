@@ -128,14 +128,14 @@ router
   )
   .delete(borrarProducto);
 
-  router.route("/productos/filtro").post(filtroBusqueda);
-  router.route("/productos-salados").get(listarProductosSalados);
-  router.route("/productos-bebida-caliente").get(listarProductosBebidaCaliente);
-  router.route("/productos-bebida-fria").get(listarProductosBebidaFria);
-  router.route("/productos-dulce").get(listarProductosDulce);
-  router.route("/productos-ensaladas").get(listarProductosEnsaladas);
-  router.route("/productos-postres").get(listarProductosPostres);
-  router.route("/productos-tortas").get(listarProductosTortas);
-  router.route("/productos-tartas").get(listarProductosTartas);
+router.route("/productos/filtro").post(filtroBusqueda);
+router.route("/productos-salados").get(listarProductosSalados);
+router.route("/productos-bebida-caliente").get(listarProductosBebidaCaliente);
+router.route("/productos-bebida-fria").get(listarProductosBebidaFria);
+router.route("/productos-dulce").get(listarProductosDulce);
+router.route("/productos-ensaladas").get(listarProductosEnsaladas);
+router.route("/productos-postres").get(listarProductosPostres);
+router.route("/productos-tortas").get(listarProductosTortas);
+router.route("/productos-tartas").get(listarProductosTartas);
 
 export default router;

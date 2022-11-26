@@ -36,7 +36,6 @@ export const crearPedido = async (req, res) => {
 
 export const obtenerPedido = async (req, res) => {
   try {
-    console.log(req.params.id);
     const pedidoBuscado = await Pedido.findById(req.params.id);
     res.status(200).json(pedidoBuscado);
   } catch (error) {
@@ -84,12 +83,12 @@ export const borrarPedido = async (req, res) => {
 // pedidos pendientes
 export const listarPedidosPendientes = async (req, res) => {
   try {
-    const pedidosPendientes = await Pedido.find({estado: "Pendiente"});
+    const pedidosPendientes = await Pedido.find({ estado: "Pendiente" });
     res.status(200).json(pedidosPendientes);
   } catch (error) {
     console.log(error);
     res.status(404).json({
-      mensaje: "Error al intentar buscar los producto",
+      mensaje: "Error al intentar listar los pedidos pendientes",
     });
   }
 };
@@ -97,51 +96,53 @@ export const listarPedidosPendientes = async (req, res) => {
 // pedidos pendientes
 export const listarPedidosElaboracion = async (req, res) => {
   try {
-    const pedidosPendientes = await Pedido.find({estado: "En elaboracion"});
+    const pedidosPendientes = await Pedido.find({ estado: "En elaboracion" });
     res.status(200).json(pedidosPendientes);
   } catch (error) {
     console.log(error);
     res.status(404).json({
-      mensaje: "Error al intentar buscar los producto",
+      mensaje: "Error al intentar listar los pedidos en elaboracion",
     });
   }
-}
+};
 
 // pedidos listos
 export const listarPedidosListos = async (req, res) => {
   try {
-    const pedidosListos = await Pedido.find({estado: "Listo para retirar"});
+    const pedidosListos = await Pedido.find({ estado: "Listo para retirar" });
     res.status(200).json(pedidosListos);
   } catch (error) {
     console.log(error);
     res.status(404).json({
-      mensaje: "Error al intentar buscar los producto",
+      mensaje: "Error al intentar listar los pedidos listos",
     });
   }
-}
+};
 
 // pedidos cancelados
 export const listarPedidosCancelados = async (req, res) => {
   try {
-    const pedidosCancelados = await Pedido.find({estado: "Cancelado"});
+    const pedidosCancelados = await Pedido.find({ estado: "Cancelado" });
     res.status(200).json(pedidosCancelados);
   } catch (error) {
     console.log(error);
     res.status(404).json({
-      mensaje: "Error al intentar buscar los producto",
+      mensaje: "Error al intentar listar los pedidos cancelados",
     });
   }
-}
+};
 
 // Pedidos personales
 export const listarPedidosPersonales = async (req, res) => {
   try {
-    const pedidosPersonales = await Pedido.find({nombreUsuario: req.body.nombreUsuario});
+    const pedidosPersonales = await Pedido.find({
+      nombreUsuario: req.body.nombreUsuario,
+    });
     res.status(200).json(pedidosPersonales);
   } catch (error) {
     console.log(error);
     res.status(404).json({
-      mensaje: "Error al intentar buscar los producto",
+      mensaje: "Error al intentar listar los pedidos personales",
     });
   }
 };
