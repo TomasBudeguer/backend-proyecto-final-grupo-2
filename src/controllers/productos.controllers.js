@@ -100,9 +100,7 @@ export const filtroBusqueda = async (req, res) => {
       });
     }
 
-    res.status(200).json(
-      productoBuscado
-    );
+    res.status(200).json(productoBuscado);
   } catch (error) {
     console.log(error);
     res.status(400).json({
@@ -111,10 +109,9 @@ export const filtroBusqueda = async (req, res) => {
   }
 };
 
-
 export const listarProductosSalados = async (req, res) => {
   try {
-    const productosSalados = await Producto.find({categoria: "Salado"});
+    const productosSalados = await Producto.find({ categoria: "Salado" });
     res.status(200).json(productosSalados);
   } catch (error) {
     console.log(error);
@@ -126,7 +123,9 @@ export const listarProductosSalados = async (req, res) => {
 
 export const listarProductosBebidaCaliente = async (req, res) => {
   try {
-    const productosBebidaCaliente = await Producto.find({categoria: "Bebida caliente"});
+    const productosBebidaCaliente = await Producto.find({
+      categoria: "Bebida caliente",
+    });
     res.status(200).json(productosBebidaCaliente);
   } catch (error) {
     console.log(error);
@@ -136,10 +135,11 @@ export const listarProductosBebidaCaliente = async (req, res) => {
   }
 };
 
-
 export const listarProductosBebidaFria = async (req, res) => {
   try {
-    const productosBebidaFria = await Producto.find({categoria: "Bebida fria"});
+    const productosBebidaFria = await Producto.find({
+      categoria: "Bebida fria",
+    });
     res.status(200).json(productosBebidaFria);
   } catch (error) {
     console.log(error);
@@ -151,7 +151,7 @@ export const listarProductosBebidaFria = async (req, res) => {
 
 export const listarProductosDulce = async (req, res) => {
   try {
-    const productosDulce = await Producto.find({categoria: "Dulce"});
+    const productosDulce = await Producto.find({ categoria: "Dulce" });
     res.status(200).json(productosDulce);
   } catch (error) {
     console.log(error);
@@ -163,7 +163,7 @@ export const listarProductosDulce = async (req, res) => {
 
 export const listarProductosEnsaladas = async (req, res) => {
   try {
-    const productosEnsaladas = await Producto.find({categoria: "Ensaladas"});
+    const productosEnsaladas = await Producto.find({ categoria: "Ensaladas" });
     res.status(200).json(productosEnsaladas);
   } catch (error) {
     console.log(error);
@@ -175,7 +175,7 @@ export const listarProductosEnsaladas = async (req, res) => {
 
 export const listarProductosPostres = async (req, res) => {
   try {
-    const productosPostres = await Producto.find({categoria: "Postres"});
+    const productosPostres = await Producto.find({ categoria: "Postres" });
     res.status(200).json(productosPostres);
   } catch (error) {
     console.log(error);
@@ -187,7 +187,7 @@ export const listarProductosPostres = async (req, res) => {
 
 export const listarProductosTortas = async (req, res) => {
   try {
-    const productosTortas = await Producto.find({categoria: "Tortas"});
+    const productosTortas = await Producto.find({ categoria: "Tortas" });
     res.status(200).json(productosTortas);
   } catch (error) {
     console.log(error);
@@ -199,7 +199,7 @@ export const listarProductosTortas = async (req, res) => {
 
 export const listarProductosTartas = async (req, res) => {
   try {
-    const productosTartas = await Producto.find({categoria: "Tartas"});
+    const productosTartas = await Producto.find({ categoria: "Tartas" });
     res.status(200).json(productosTartas);
   } catch (error) {
     console.log(error);
@@ -208,6 +208,3 @@ export const listarProductosTartas = async (req, res) => {
     });
   }
 };
-
-
-
