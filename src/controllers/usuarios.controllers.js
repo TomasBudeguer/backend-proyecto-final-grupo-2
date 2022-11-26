@@ -44,6 +44,8 @@ export const login = async (req, res) => {
       mensaje: "El usuario existe",
       uid: usuario._id,
       nombreUsuario: usuario.nombreUsuario,
+      email: usuario.email,
+      password: usuario.password
     });
   } catch (error) {
     console.log(error);
