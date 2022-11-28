@@ -20,6 +20,8 @@ Frontend: :heavy_check_mark:
 - react-hook-form v7.39.1
 - react-router-dom v6.4.3
 - sweetalert2 v11.6.7
+- emailjs 4.0.1
+- emailjs-com: 3.2.0
 
 Backend: :heavy_check_mark:
 - babel-cli v6.26.0
