@@ -6,10 +6,6 @@ Por otro lado se aplicaron los conceptos aprendidos de React, Java Script, CSS, 
 El alcance del mismo se basa en un restaurant de modalidad "take away" donde en la web aparecen los menús disponibles y los distintos estados como: espera, entregado, cancelado.
 También se insistió en la idea de un usuario "administrador" de la web para poder crear productor, editarlos, así como también poder supervisar los usuarios registrados/clientes.
 
-## Accede a la demo del proyecto en el siguiente link: :construction:
-1. https://proyecto-kitchen-grupo-2.netlify.app/
-1. https://backend-proyecto-final-grupo-2.vercel.app/
-
 ## Librerias utilizadas :books:
 
 Frontend: :heavy_check_mark:
