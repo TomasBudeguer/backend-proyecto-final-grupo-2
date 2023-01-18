@@ -80,7 +80,6 @@ export const borrarPedido = async (req, res) => {
   }
 };
 
-// pedidos pendientes
 export const listarPedidosPendientes = async (req, res) => {
   try {
     const pedidosPendientes = await Pedido.find({ estado: "Pendiente" });
@@ -93,7 +92,6 @@ export const listarPedidosPendientes = async (req, res) => {
   }
 };
 
-// pedidos pendientes
 export const listarPedidosElaboracion = async (req, res) => {
   try {
     const pedidosPendientes = await Pedido.find({ estado: "En elaboracion" });
@@ -106,7 +104,6 @@ export const listarPedidosElaboracion = async (req, res) => {
   }
 };
 
-// pedidos listos
 export const listarPedidosListos = async (req, res) => {
   try {
     const pedidosListos = await Pedido.find({ estado: "Listo para retirar" });
@@ -119,7 +116,6 @@ export const listarPedidosListos = async (req, res) => {
   }
 };
 
-// pedidos cancelados
 export const listarPedidosCancelados = async (req, res) => {
   try {
     const pedidosCancelados = await Pedido.find({ estado: "Cancelado" });
@@ -132,7 +128,6 @@ export const listarPedidosCancelados = async (req, res) => {
   }
 };
 
-// Pedidos personales
 export const listarPedidosPersonales = async (req, res) => {
   try {
     const pedidosPersonales = await Pedido.find({

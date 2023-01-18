@@ -80,7 +80,6 @@ export const borrarProducto = async (req, res) => {
   }
 };
 
-// filtro de busqueda
 
 export const filtroBusqueda = async (req, res) => {
   try {
@@ -93,7 +92,7 @@ export const filtroBusqueda = async (req, res) => {
 
     const { nombreProducto } = req.body;
 
-    let productoBuscado = await Producto.find({ nombreProducto }); //devulve un null
+    let productoBuscado = await Producto.find({ nombreProducto });
     if (!productoBuscado) {
       return res.status(400).json({
         mensaje: "No se encontraron resultados",
