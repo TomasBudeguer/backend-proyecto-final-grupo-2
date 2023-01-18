@@ -36,7 +36,7 @@ export const login = async (req, res) => {
       password: usuario.password,
     });
   } catch (error) {
-    console.log(error);
+    console.error;
     res.status(400).json({
       mensaje: "usuario o contraseña invalido",
     });
@@ -73,7 +73,7 @@ export const crearUsuario = async (req, res) => {
       uid: usuario._id,
     });
   } catch (error) {
-    console.log(error);
+    console.error;
     res.status(400).json({
       mensaje: "El usuario no pudo ser creado",
     });
@@ -85,7 +85,7 @@ export const listarUsuarios = async (req, res) => {
     const listarUsuarios = await Usuario.find();
     res.status(200).json(listarUsuarios);
   } catch (error) {
-    console.log(error);
+    console.error;
     res.status(404).json({
       mensaje: "Error al intentar listar los usuarios",
     });
@@ -97,7 +97,7 @@ export const obtenerUsuario = async (req, res) => {
     const usuarioBuscado = await Usuario.findById(req.params.id);
     res.status(200).json(usuarioBuscado);
   } catch (error) {
-    console.log(error);
+    console.error;
     res.status(404).json({
       mensaje: "Error no se pudo encontrar el usuario solicitado",
     });
